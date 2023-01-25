@@ -1,0 +1,3 @@
+[submodule "examples/usage_with_not_installed/modules/m_str"]
+	path = examples/usage_with_not_installed/modules/m_str
+	url = https://github.com/dan4ik605743/m_str
