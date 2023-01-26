@@ -13,23 +13,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(Boost_USE_MULTITHREADED ON)
 
-file(GLOB HEADERS ./m_str/*.hh)
-
-add_library(
-    ${PROJECT_NAME} INTERFACE
-)
-
-target_include_directories(
-    ${PROJECT_NAME} INTERFACE ./
-)
-
-target_link_libraries(
-    ${PROJECT_NAME} PRIVATE
-)
-
-include(GNUInstallDirs)
-install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-install(FILES ${HEADERS} DESTINATION include/${PROJECT_NAME})
+add_subdirectory(m_str)
 
 if (ENABLE_TESTS)
     enable_testing()

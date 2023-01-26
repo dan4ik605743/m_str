@@ -1,4 +1,4 @@
-find_package (Boost 1.75.0 REQUIRED COMPONENTS unit_test_framework REQUIRED)
+find_package (Boost 1.74.0 REQUIRED COMPONENTS unit_test_framework REQUIRED)
 
 enable_testing()
 
