@@ -6,6 +6,7 @@
 #ifndef NON_MEMBER_FUNC_HH
 #define NON_MEMBER_FUNC_HH
 
+#include <type_traits>
 #include "m_str.hh"
 
 namespace m_str {
@@ -122,9 +123,9 @@ inline std::istream& operator>>(std::istream& istrm, m_str& m_str) {
 };
 
 /**
- * @brief String concatenates(first with second). 
- * 
- * @param lhs - First string. 
+ * @brief String concatenates(first with second).
+ *
+ * @param lhs - First string.
  * @param rhs - Second string.
  * @return m_str - Result concatenates.
  */
@@ -137,16 +138,22 @@ inline std::istream& operator>>(std::istream& istrm, m_str& m_str) {
 }
 
 /**
+ * @brief Accept numbers.
+ *
+ * @tparam T - Variable to accept numbers.
+ */
+template <typename T>
+concept Numeric = std::is_arithmetic_v<T> && !std::is_same_v<T, bool>;
+
+/**
  * @brief Converts an integral or floating point value to string.
  *
- * @tparam T - Template value.
  * @param value - value to converting.
  * @return m_str - Converted value.
  *
  * @throw std::invalid_argument: std::make_error_code(std::errc()).message().
  */
-template <typename T>
-[[nodiscard]] inline m_str to_m_str(T value) {
+[[nodiscard]] inline m_str to_m_str(Numeric auto value) {
     constexpr std::uint8_t size = 64;
     std::array<char, size> buff{};
 
