@@ -12,7 +12,23 @@ cmake ..
 sudo cmake --build . --target install --config Release
 ```
 
+## Usage 
+```
+#include <iostream>
+#include <m_str/lib.hh> // Header-only
+
+using namespace m_str;
+
+int main() {
+    m_str str("test");
+    std::cout << str << std::endl;
+
+    return 0;
+}
+```
+
 ## Usage with not installed
 Check <a href="https://github.com/dan4ik605743/m_str/tree/master/examples/usage_with_not_installed">examples</a>
 
-//TODO Doxygen
+## Documentation 
+### https://dan4ik605743.github.io/m_str_wiki

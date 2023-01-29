@@ -1,3 +1,8 @@
+/**
+ * @file lib.hh
+ * @brief The file linking the entire header-only library to be used.
+ */
+
 #ifndef LIB_HH
 #define LIB_HH
 

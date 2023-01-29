@@ -1,20 +1,25 @@
+/**
+ * @file constructors.hh
+ * @brief Implementation of class constructors.
+ */
+
 #ifndef CONSTRUCTORS_HH
 #define CONSTRUCTORS_HH
 
 #include "m_str.hh"
 
 namespace m_str {
-constexpr m_str::m_str(const_pointer str) {
+constexpr m_str::m_str(const_pointer str) noexcept {
     write(str);
 }
 
-constexpr m_str::m_str(const_iterator begin, const_iterator end) {
+constexpr m_str::m_str(const_iterator begin, const_iterator end) noexcept {
     for (const auto* iter = begin; iter != end; ++iter) {
         push_back(*iter);
     }
 }
 
-constexpr m_str::m_str(const m_str& m_str) {
+constexpr m_str::m_str(const m_str& m_str) noexcept {
     if (m_str.check_use_short_str_()) {
         write(std::get<short_str>(m_str.sso_).data());
         return;
@@ -22,7 +27,7 @@ constexpr m_str::m_str(const m_str& m_str) {
     write(std::get<long_str>(m_str.sso_).str.get());
 }
 
-constexpr inline m_str& m_str::operator=(const m_str& m_str) {
+constexpr inline m_str& m_str::operator=(const m_str& m_str) noexcept {
     if (m_str.check_use_short_str_()) {
         write(std::get<short_str>(m_str.sso_).data());
         return *this;

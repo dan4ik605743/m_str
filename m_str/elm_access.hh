@@ -1,3 +1,8 @@
+/**
+ * @file elm_access.hh
+ * @brief Implementing Methods in the Element Access Category.
+ */
+
 #ifndef ELM_ACCESS_HH
 #define ELM_ACCESS_HH
 

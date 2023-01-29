@@ -1,3 +1,8 @@
+/**
+ * @file operations.hh
+ * @brief Implementation of methods in the Operations category.
+ */
+
 #ifndef OPERATIONS_HH
 #define OPERATIONS_HH
 

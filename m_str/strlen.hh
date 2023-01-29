@@ -9,6 +9,7 @@
 
 //
 namespace m_str {
+/// @private
 constexpr inline size_t strlen_(const char* str) {
     std::size_t size = 0;
 

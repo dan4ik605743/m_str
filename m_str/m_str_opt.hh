@@ -1,3 +1,8 @@
+/**
+ * @file m_str_opt.hh
+ * @brief Implementation of symbols notation taking into account allocations.
+ */
+
 #ifndef M_STR_OPT_HH
 #define M_STR_OPT_HH
 

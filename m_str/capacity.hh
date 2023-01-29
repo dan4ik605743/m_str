@@ -1,3 +1,8 @@
+/**
+ * @file capacity.hh
+ * @brief Implementation of methods in the Capacity category.
+ */
+
 #ifndef CAPACITY_HH
 #define CAPACITY_HH
 

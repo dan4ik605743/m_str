@@ -1,3 +1,9 @@
+/**
+ * @file private_func.hh
+ * @brief Implementation of methods in the category private functions of a
+ * class.
+ */
+
 #ifndef PRIVATE_FUNC_HH
 #define PRIVATE_FUNC_HH
 

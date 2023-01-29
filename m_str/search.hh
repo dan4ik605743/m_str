@@ -1,3 +1,8 @@
+/**
+ * @file search.hh
+ * @brief Implementing methods in the search category.
+ */
+
 #ifndef SEARCH_HH
 #define SEARCH_HH
 
