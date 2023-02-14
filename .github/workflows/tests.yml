@@ -12,7 +12,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Check build project
-      run: docker build -f Dockerfile .
     - name: Run tests
-      run: docker build -f Dockerfile_tests .
+      run: docker build -f Dockerfile .

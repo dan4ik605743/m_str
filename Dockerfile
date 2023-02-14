@@ -1,14 +1,17 @@
 FROM debian:experimental
-MAINTAINER Danil Danevich <6057430gu@gmail.com>
+LABEL maintainer="6057430gu@gmail.com"
 
-RUN apt-get -qq update && \
-    apt-get -qq install -y g++ make binutils cmake libboost-all-dev
+RUN apt-get update -y --no-install-recommends && \
+    apt-get install -y --no-install-recommends g++ make binutils cmake libboost-all-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/m_str
-COPY m_str m_str
-COPY CMakeLists.txt ./
+COPY . ./
 
-RUN cmake . && \
+RUN mkdir build && \
+    cd build && \
+    cmake .. && \
     make -j$(nproc) && \
     make install && \
-    rm -rf /usr/src/tgbot-cpp/*
+    rm -rf /usr/src/m_str/*
